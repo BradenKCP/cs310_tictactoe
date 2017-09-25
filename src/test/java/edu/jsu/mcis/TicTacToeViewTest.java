@@ -30,10 +30,11 @@ public class TicTacToeViewTest {
 	
     @Test
     public void testViewOfBlankGrid() {
-        
+     
         view.viewModel();
         String s = "\n  012\n\n0 ---\n1 ---\n2 ---\n\n\n\n";
         assertEquals(s.length(), output.size());
+		
         
     }
 	

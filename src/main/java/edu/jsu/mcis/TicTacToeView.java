@@ -16,15 +16,37 @@ public class TicTacToeView {
         
         /* Print the board to the console (see examples) */
         
-        /* INSERT YOUR CODE HERE */
-
-    }
+		int rowcount = 0;
+		System.out.println("  012\n");
+		for(int row = 0; row < model.getWidth(); row++){
+			System.out.print(rowcount + " ");
+			rowcount++;
+			for(int col = 0; col < model.getWidth(); col++){
+				if(model.getMark(row,col) == TicTacToeModel.Mark.EMPTY){
+					System.out.print("-");
+				}
+				if(model.getMark(row,col) == TicTacToeModel.Mark.X){
+					System.out.print("X");
+				}
+				if(model.getMark(row,col) == TicTacToeModel.Mark.O){
+					System.out.print("O");
+				}
+			}
+			System.out.println("");
+		}
+		rowcount = 0;
+	}
 
     public void showNextMovePrompt() {
 
         /* Display a prompt for the player's next move (see examples) */
 
-        /* INSERT YOUR CODE HERE */
+		if(model.isXTurn()){
+			System.out.println("Player X, enter your move");
+		}
+		else{
+			System.out.println("Player O, enter your move");
+		}
 
     }
 
@@ -32,7 +54,7 @@ public class TicTacToeView {
 
         /* Display an error if input is invalid (see examples) */
 
-        /* INSERT YOUR CODE HERE */
+		System.out.println("Invalid Location");
 
     }
 
@@ -40,7 +62,7 @@ public class TicTacToeView {
 
         /* Display final winner */
 
-        System.out.println(r + "!");
+        System.out.println(r + " is the winner!");
 
     }
 	
